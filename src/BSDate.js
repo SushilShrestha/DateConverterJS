@@ -40,7 +40,6 @@ var BSDate = function(year_, month_, day_){
     }
 
     function _reduceDelta(daysToReduce){
-        daysInMonth = getNumDays(year, month)
         daysLeftInMonth = day
 
         if (daysToReduce < daysLeftInMonth){
@@ -48,12 +47,14 @@ var BSDate = function(year_, month_, day_){
             return;
         }
 
-        day = daysInMonth;
         month -= 1
         if (month<1){
             month = 12;
             year -= 1;
         }
+        daysInMonth = getNumDays(year, month)
+        day = daysInMonth;
+
         daysToReduce -= daysLeftInMonth
         _reduceDelta(daysToReduce)
     }
@@ -93,7 +94,7 @@ var BSDate = function(year_, month_, day_){
                 _addDelta(daysToAdd);
                 _afterDeltaAddition();
             } else {
-                _reduceDelta(daysToAdd*-1)
+                _reduceDelta(daysToAdd*-1+1)
             }
             return this
         },

@@ -8,12 +8,15 @@ var ADDate = function(year_, month_, day_){
     var day = +day_;
 
     function isLeapYear(year_){
-        if ( year_%4 === 0 )
-            if ( year_%100 === 0 )
-                if ( year_%400 === 0)
+        if ( year_%4 === 0 ) {
+            if (year_ % 100 === 0) {
+                if (year_ % 400 === 0) {
                     return true;
+                }
                 return false;
+            }
             return true;
+        }
         return false;
     }
 
@@ -40,7 +43,7 @@ var ADDate = function(year_, month_, day_){
         day = 0;
         month += 1
         if (month>12){
-            month = month%12 + 1;
+            month = month%12;
             year += 1;
         }
         daysToAdd -= daysLeftInMonth;
@@ -48,7 +51,6 @@ var ADDate = function(year_, month_, day_){
     }
 
     function _reduceDelta(daysToReduce){
-        daysInMonth = getNumDays(year, month)
         daysLeftInMonth = day
 
         if (daysToReduce < daysLeftInMonth){
@@ -56,12 +58,14 @@ var ADDate = function(year_, month_, day_){
             return;
         }
 
-        day = daysInMonth;
         month -= 1
         if (month<1){
             month = 12;
             year -= 1;
         }
+        daysInMonth = getNumDays(year, month)
+        day = daysInMonth;
+
         daysToReduce -= daysLeftInMonth
         _reduceDelta(daysToReduce)
     }
@@ -100,7 +104,8 @@ var ADDate = function(year_, month_, day_){
                 _addDelta(daysToAdd);
                 _afterDeltaAddition();
             } else {
-                _reduceDelta(daysToAdd*-1)
+                _reduceDelta(daysToAdd*-1+1)
+                console.log("hello hello")
             }
             return this
         },
