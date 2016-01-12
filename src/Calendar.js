@@ -2,20 +2,24 @@
  * Created by sushil on 12/6/15.
  */
 
+var assert = require("./assert")
 var BSDate = require("./BSDate");
 var ADDate = require("./ADDate");
 
 var Calendar = function(year_, month_, day_){
-    var year = year_;
-    var month = month_;
-    var day = day_;
+    assert(+year_ && +month_ && +day_,
+        "Invalid arguments. Arguments are supposed to be yyyy mm dd");
+
+    var year = +year_;
+    var month = +month_;
+    var day = +day_;
 
     var bsDate;
     var adDate;
 
     return {
         convertToAD: function(){
-            bsDate = BSDate(year, month, day)
+            bsDate = BSDate(year, month, day);
             anchorPoint = bsDate.getAnchorPoint();
             deltaDays = bsDate.getYearDays();
             adDate = ADDate(+anchorPoint[0], +anchorPoint[1], +anchorPoint[2]).addDelta(deltaDays);
@@ -57,4 +61,5 @@ var Calendar = function(year_, month_, day_){
 //
 //console.log(Calendar(2015, 1, 19).convertToBS().toBSString())
 //console.log(Calendar(2015, 1, 19).convertToBS().toADString())
+
 module.exports = Calendar
