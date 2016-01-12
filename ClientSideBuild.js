@@ -1,1 +1,1 @@
-require("expose?dateconverter!./src/Calendar.js")
+require("expose?DateConverter!./src/Calendar.js")
