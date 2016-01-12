@@ -1,0 +1,1 @@
+require("expose?dateconverter!./src/Calendar.js")
