@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test for client side application</title>
+</head>
+<body>
+    <h1>
+        <div id="result">Testing material for client side DateConverter.js</div>
+    </h1>
+    <script src="../build/dateconverter.dist.js"></script>
+    <script type="text/javascript">
+        tester = function(){
+            var error = false;
+
+            function assert(condition, message){
+                if (! condition){
+                    error = true;
+                    throw message || "Assertion Error!!!"
+                }
+            }
+
+            function testLoading(){
+                error = true;
+                a = DateConverter(2015, 5, 15);
+                error = false;
+            }
+
+            function conversionTest(){
+                error = true;
+                assert(DateConverter(2071, 1, 28).convertToAD().toADString() === "2014-5-11")
+                assert(DateConverter(2071, 2, 28).convertToAD().toADString() === "2014-6-11")
+                assert(DateConverter(2071, 3, 28).convertToAD().toADString() === "2014-7-12")
+                assert(DateConverter(2071, 4, 28).convertToAD().toADString() === "2014-8-13")
+                assert(DateConverter(2071, 5, 28).convertToAD().toADString() === "2014-9-13")
+                assert(DateConverter(2071, 6, 28).convertToAD().toADString() === "2014-10-14")
+                assert(DateConverter(2071, 7, 28).convertToAD().toADString() === "2014-11-14")
+                assert(DateConverter(2071, 8, 28).convertToAD().toADString() === "2014-12-14")
+                assert(DateConverter(2071, 9, 28).convertToAD().toADString() === "2015-1-12")
+                assert(DateConverter(2071, 10, 28).convertToAD().toADString() === "2015-2-11")
+                assert(DateConverter(2071, 11, 28).convertToAD().toADString() === "2015-3-12")
+                assert(DateConverter(2071, 12, 28).convertToAD().toADString() === "2015-4-11")
+
+                assert(DateConverter(2016, 1, 28).convertToBS().toBSString() === "2072-10-14")
+                assert(DateConverter(2016, 2, 28).convertToBS().toBSString() === "2072-11-16")
+                assert(DateConverter(2016, 3, 28).convertToBS().toBSString() === "2072-12-15")
+                assert(DateConverter(2016, 4, 28).convertToBS().toBSString() === "2073-1-16")
+                assert(DateConverter(2016, 5, 28).convertToBS().toBSString() === "2073-2-15")
+                assert(DateConverter(2016, 6, 28).convertToBS().toBSString() === "2073-3-14")
+                assert(DateConverter(2016, 7, 28).convertToBS().toBSString() === "2073-4-13")
+                assert(DateConverter(2016, 8, 28).convertToBS().toBSString() === "2073-5-12")
+                assert(DateConverter(2016, 9, 28).convertToBS().toBSString() === "2073-6-12")
+                assert(DateConverter(2016, 10, 28).convertToBS().toBSString() === "2073-7-12")
+                assert(DateConverter(2016, 11, 28).convertToBS().toBSString() === "2073-8-13")
+                assert(DateConverter(2016, 12, 28).convertToBS().toBSString() === "2073-9-13")
+                error = false;
+            }
+
+            return {
+                runTest: function(){
+                    testLoading();
+                    conversionTest();
+                },
+                getTestStatus: function(){
+                    return error?"Test Failed!!!":"Test passed"
+                }
+            }
+        }
+
+
+        var taster = tester();
+        taster.runTest()
+        alert(taster.getTestStatus());
+    </script>
+
+</body>
+</html>

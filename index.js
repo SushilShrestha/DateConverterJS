@@ -1,1 +1,1 @@
-module.exports = require("./src/Calendar.js")
+module.exports = require("./src/DateConverter")
