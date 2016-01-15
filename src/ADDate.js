@@ -104,8 +104,7 @@ var ADDate = function(year_, month_, day_){
                 _addDelta(daysToAdd);
                 _afterDeltaAddition();
             } else {
-                _reduceDelta(daysToAdd*-1+1)
-                console.log("hello hello")
+                _reduceDelta(daysToAdd*-1)
             }
             return this
         },

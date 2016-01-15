@@ -10,7 +10,7 @@ var BSDate = function(year_, month_, day_){
     var day = +day_;
 
     function getYearData(year){
-        dateDetails = ConversionTable[year_];
+        dateDetails = ConversionTable[year];
         if (dateDetails === undefined)
             throw "Date out of conversion range";
         return dateDetails;
@@ -32,7 +32,7 @@ var BSDate = function(year_, month_, day_){
         day = 0;
         month += 1
         if (month>12){
-            month = month%12 + 1;
+            month = month%12;
             year += 1;
         }
         daysToAdd -= daysLeftInMonth;
@@ -94,7 +94,7 @@ var BSDate = function(year_, month_, day_){
                 _addDelta(daysToAdd);
                 _afterDeltaAddition();
             } else {
-                _reduceDelta(daysToAdd*-1+1)
+                _reduceDelta(daysToAdd*-1)
             }
             return this
         },
@@ -140,6 +140,5 @@ function assert(condition){
 //console.log(BSDate("2072", 8, 16).addDelta(13).toString()) //2072-8-29
 //console.log(BSDate("2072", 8, 16).addDelta(14).toString()) // 2072-9-1
 //console.log(BSDate("2072", 11, 16).addDelta(50).toString()) // 2073-1-6
-
 
 module.exports = BSDate;
