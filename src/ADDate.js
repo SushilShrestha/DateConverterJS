@@ -32,6 +32,17 @@ var ADDate = function(year_, month_, day_){
         return days;
     }
 
+    function validateDate(){
+        var dayInMonth = getNumDays(year, month);
+        if (day > dayInMonth || day<1){
+            throw "Invalid Date";
+        }
+        if (month>12 || month<1){
+            throw "Invalid Date";
+        }
+    }
+    validateDate();
+
     function _addDelta(daysToAdd){
         daysInMonth = getNumDays(year, month);
         daysLeftInMonth = daysInMonth - day

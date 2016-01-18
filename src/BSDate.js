@@ -16,10 +16,20 @@ var BSDate = function(year_, month_, day_){
         return dateDetails;
     }
     function getNumDays(year_, month_){
-        dateDetails = getYearData(year_)
+        dateDetails = getYearData(year_);
         days = dateDetails['daysonmonth'][month_-1];
         return days;
     }
+    function validateDate(){
+        var dayInMonth = getNumDays(year, month);
+        if (day > dayInMonth || day<1){
+            throw "Invalid Date";
+        }
+        if (month>12 || month<1){
+            throw "Invalid Date";
+        }
+    }
+    validateDate();
 
     function _addDelta(daysToAdd){
         daysInMonth = getNumDays(year, month);

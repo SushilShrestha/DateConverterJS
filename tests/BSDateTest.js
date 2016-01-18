@@ -21,6 +21,7 @@ assert(BSDate(2080, 1, 6).addDelta(-3703).toString() === BSDate(2069, 11, 16).to
 // for anchorPoint
 
 //for getYearDays
+console.log(BSDate(2072, 1, 1).getYearDays())
 assert(BSDate(2072, 11, 1).getYearDays() === 305)
 assert(BSDate("2072", 8, 16).getYearDays() === 232)
 

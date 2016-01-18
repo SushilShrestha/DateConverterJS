@@ -114,6 +114,12 @@ var DateConverter = function(year_, month_, day_){
 //console.log(Calendar(2016, 10, 28).convertToBS().toBSString()+" "+"2072-7-12")
 //console.log(Calendar(2016, 11, 28).convertToBS().toBSString()+" "+"2072-8-13")
 //console.log(Calendar(2016, 12, 28).convertToBS().toBSString()+" "+"2072-9-13")
+//console.log(DateConverter(2021, 7, 15).convertToBS().toBSString())
+//console.log(DateConverter(1927,4,13).convertToBS().toBSString())
 
-
+//try {
+//    console.log(DateConverter(1983, 12, 32).convertToAD().toADString());
+//}catch(e){
+//    console.log(e)
+//}
 module.exports = DateConverter
