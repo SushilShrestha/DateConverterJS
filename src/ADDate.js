@@ -133,10 +133,4 @@ var ADDate = function(year_, month_, day_){
 };
 
 
-//test = ADDate(2015, 11, 18)
-//console.log(ADDate(2015, 11, 18).addDelta(0).toString())
-//console.log(ADDate(2015, 11, 18).addDelta(12).toString())
-//console.log(ADDate(2015, 11, 18).addDelta(13).toString())
-//console.log(ADDate(2015, 11, 18).addDelta(-17).toString())
-
 module.exports = ADDate;

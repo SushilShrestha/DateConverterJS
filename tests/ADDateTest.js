@@ -36,12 +36,3 @@ assert(ADDate(2015, 8, 16).getYearDays() === 227)
 
 
 console.log("Tests Passed on ADDate")
-
-
-
-
-//test = ADDate(2015, 11, 18)
-//console.log(ADDate(2015, 11, 18).addDelta(0).toString())
-//console.log(ADDate(2015, 11, 18).addDelta(12).toString())
-//console.log(ADDate(2015, 11, 18).addDelta(13).toString())
-//console.log(ADDate(2015, 11, 18).addDelta(-17).toString())

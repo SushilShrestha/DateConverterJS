@@ -141,14 +141,4 @@ function assert(condition){
     console.log("Passed");
 }
 
-//test = BSDate(2072, 10, 20);
-//assert(test.isValid());
-//assert(BSDate("2072", 8, 30).isValid()===false)
-//assert(BSDate("2072", 8, 16).getYearDays()===233)
-//assert(BSDate("2072", 8, 16).getAnchorPoint())
-//console.log(BSDate("2072", 8, 16).addDelta(7).toString()) //2072-8-23
-//console.log(BSDate("2072", 8, 16).addDelta(13).toString()) //2072-8-29
-//console.log(BSDate("2072", 8, 16).addDelta(14).toString()) // 2072-9-1
-//console.log(BSDate("2072", 11, 16).addDelta(50).toString()) // 2073-1-6
-
 module.exports = BSDate;
