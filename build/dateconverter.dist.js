@@ -173,8 +173,14 @@
 	//console.log(Calendar(2016, 10, 28).convertToBS().toBSString()+" "+"2072-7-12")
 	//console.log(Calendar(2016, 11, 28).convertToBS().toBSString()+" "+"2072-8-13")
 	//console.log(Calendar(2016, 12, 28).convertToBS().toBSString()+" "+"2072-9-13")
+	//console.log(DateConverter(2021, 7, 15).convertToBS().toBSString())
+	//console.log(DateConverter(1927,4,13).convertToBS().toBSString())
 
-
+	//try {
+	//    console.log(DateConverter(1983, 12, 32).convertToAD().toADString());
+	//}catch(e){
+	//    console.log(e)
+	//}
 	module.exports = DateConverter
 
 /***/ },
@@ -214,10 +220,20 @@
 	        return dateDetails;
 	    }
 	    function getNumDays(year_, month_){
-	        dateDetails = getYearData(year_)
+	        dateDetails = getYearData(year_);
 	        days = dateDetails['daysonmonth'][month_-1];
 	        return days;
 	    }
+	    function validateDate(){
+	        var dayInMonth = getNumDays(year, month);
+	        if (day > dayInMonth || day<1){
+	            throw "Invalid Date";
+	        }
+	        if (month>12 || month<1){
+	            throw "Invalid Date";
+	        }
+	    }
+	    validateDate();
 
 	    function _addDelta(daysToAdd){
 	        daysInMonth = getNumDays(year, month);
@@ -521,6 +537,17 @@
 	        days = dateDetails[month_-1];
 	        return days;
 	    }
+
+	    function validateDate(){
+	        var dayInMonth = getNumDays(year, month);
+	        if (day > dayInMonth || day<1){
+	            throw "Invalid Date";
+	        }
+	        if (month>12 || month<1){
+	            throw "Invalid Date";
+	        }
+	    }
+	    validateDate();
 
 	    function _addDelta(daysToAdd){
 	        daysInMonth = getNumDays(year, month);

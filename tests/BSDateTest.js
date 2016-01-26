@@ -2,12 +2,12 @@
 var assert = require("./assert");
 var BSDate =require("../src/BSDate");
 
-assert(BSDate(-1, 2, 30).isValid() === false);
-assert(BSDate(1990, -1, 30).isValid() === false );
-assert(BSDate(1990, 13, 30).isValid() === false );
-assert(BSDate(1990, 1, 35).isValid() === false );
-assert(BSDate(1990, 1, 0).isValid() === false );
-assert(BSDate(1990, 1, 15).isValid() === true );
+//assert(BSDate(-1, 2, 30).isValid() === false);
+//assert(BSDate(1990, -1, 30).isValid() === false );
+//assert(BSDate(1990, 13, 30).isValid() === false );
+//assert(BSDate(1990, 1, 35).isValid() === false );
+//assert(BSDate(1990, 1, 0).isValid() === false );
+//assert(BSDate(1990, 1, 15).isValid() === true );
 
 // delta addition
 assert(BSDate(2072, 9, 28).addDelta(3).toString() === BSDate(2072, 10, 1).toString())
@@ -21,9 +21,10 @@ assert(BSDate(2080, 1, 6).addDelta(-3703).toString() === BSDate(2069, 11, 16).to
 // for anchorPoint
 
 //for getYearDays
-console.log(BSDate(2072, 1, 1).getYearDays())
+//console.log(BSDate(2072, 1, 1).getYearDays())
 assert(BSDate(2072, 11, 1).getYearDays() === 305)
 assert(BSDate("2072", 8, 16).getYearDays() === 232)
 
 
 console.log("Tests Passed on BSDate")
+
