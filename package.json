@@ -1,11 +1,11 @@
 {
   "name": "dateconverter",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Calendar Library for Bikram Sambat Calendar(BS Calendar). This library helps to convert between two calendar systems (BS and AD).",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/testentry.js"
   },
   "keywords": [
     "BS Date",
