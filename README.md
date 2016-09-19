@@ -11,9 +11,9 @@ If you are using npm for your project, you can simply use:
 npm install --save dateconverter
 ```
 
-Or if you don't yet use npm and package bundlers, you can grab build version of DateConverterJS from [here](http://afahocci-experiments.appspot.com/dist/dateconverter.dist.js).
+Or if you don't yet use npm and package bundlers, you can grab build version of DateConverterJS from [here](https://unpkg.com/dateconverter/build/dateconverter.dist.js).
 ```html
-<script src="path/to/dist/dateconverter.dist.js"></script>
+<script src="https://unpkg.com/dateconverter/build/dateconverter.dist.js"></script>
 ```
 
 ###Usage
