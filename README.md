@@ -4,7 +4,7 @@ DateConverterJS is date conversion utility for javascript apps.
 
 It helps you to convert date between AD format and BS format. AD dates are based on fixed number of days in a month format whereas BS dates are hard to bind in certain rules. We can't exactly predict how many days are there in a certain month of certain year in BS which makes date conversion more challenging. Due to uncertainity of number of days in a year, we use a saved map reference to how many days are there in certain BS year. So date conversion can only be done within limited BS years.
 
-###Installation
+### Installation
 If you are using npm for your project, you can simply use:
 
 ```
@@ -16,7 +16,7 @@ Or if you don't yet use npm and package bundlers, you can grab build version of 
 <script src="https://unpkg.com/dateconverter/build/dateconverter.dist.js"></script>
 ```
 
-###Usage
+### Usage
 For npm users, you can
 ```javascript
 var DateConverter = require("dateconverter");
