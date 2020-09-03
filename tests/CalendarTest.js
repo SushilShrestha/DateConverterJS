@@ -77,6 +77,10 @@ assert(DateConverter(2021, 11, 15).convertToBS().toBSString() === "2078-7-29")
 assert(DateConverter(2021, 12, 15).convertToBS().toBSString() === "2078-8-29")
 console.log("Tests Passed on DateConverter")
 
+assert(DateConverter(2002, 9, 17).convertToAD().toADString() === "1945-12-31")
+assert(DateConverter(2002, 9, 18).convertToAD().toADString() === "1946-1-1")
+assert(DateConverter(2020, 4, 13).convertToBS().toBSString() === "2077-1-1")
+assert(DateConverter(2020, 4, 12).convertToBS().toBSString() === "2076-12-30")
 
 
 

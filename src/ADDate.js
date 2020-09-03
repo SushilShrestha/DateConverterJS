@@ -87,7 +87,8 @@ var ADDate = function(year_, month_, day_){
         if (day==0){
             if (month===1) {
                 month = 12;
-                daysInPreviousMonth = getNumDays(year - 1, month);
+                year -= 1
+                daysInPreviousMonth = getNumDays(year, month);
             } else {
                 month -= 1;
                 daysInPreviousMonth = getNumDays(year, month)
