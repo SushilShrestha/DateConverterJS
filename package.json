@@ -1,6 +1,6 @@
 {
   "name": "dateconverter",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Calendar Library for Bikram Sambat Calendar(BS Calendar). This library helps to convert between two calendar systems (BS and AD).",
   "main": "index.js",
   "scripts": {
