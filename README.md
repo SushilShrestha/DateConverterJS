@@ -11,13 +11,13 @@ If you are using npm for your project, you can simply use:
 npm install --save dateconverter
 ```
 
-Or if you don't yet use npm and package bundlers, you can grab build version of DateConverterJS from [here](https://unpkg.com/dateconverter/build/dateconverter.dist.js).
+Or if you don't yet use npm and package bundlers, you can grab build version of DateConverterJS from [here](https://unpkg.com/dateconverter/build/dateconverter.dist.js)
 ```html
 <script src="https://unpkg.com/dateconverter/build/dateconverter.dist.js"></script>
 ```
 
 ### Usage
-For npm users, you can
+For npm users, you can use
 ```javascript
 var DateConverter = require("dateconverter");
 
@@ -31,7 +31,7 @@ console.log(bsDate);
 
 ```
 
-For non npm users, make sure you add script tag into your html page. Then
+For non npm users, make sure you add script tag into your html page. Then,
 ```javascript
 var bsDate = DateConverter(2071, 1, 28);
 var adDate = bsDate.convertToAD().toADString();
